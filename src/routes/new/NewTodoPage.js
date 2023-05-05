@@ -1,12 +1,15 @@
 import React from "react";
 import { TodoForm } from "../../ui/TodoForm";
+import { useTodos } from "../useTodos";
 
 function NewTodoPage(){
+    const{stateUpdaters}= useTodos();
+    const {addTodo}=stateUpdaters;
     return(
         <TodoForm 
             label="Escribe tu nuevo Todo"
             submitText="Añadir"
-            submitEvent={()=>console.log('Llamar a addTdo')}     
+            submitEvent={(text)=>addTodo(text)}     
         />
     );
 }

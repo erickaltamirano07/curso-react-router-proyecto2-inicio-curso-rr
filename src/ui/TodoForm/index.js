@@ -14,9 +14,9 @@ function TodoForm( props ) {
     navigate('/');
   };
   const onSubmit = (event) => {
-    event.preventDefault();
-    navigate('/');
+    event.preventDefault();    
     props.submitEvent(newTodoValue);
+    navigate('/');
     
   };
 
